@@ -1,0 +1,249 @@
+:root {
+  --sidebar-bg: #2f373b;
+  --sidebar-heading: #fff;
+  --sidebar-subheading: #a1a1a1;
+  --sidebar-text: #fff;
+  --content-bg: #fff;
+  --content-bg-grey: #efefef;
+  --content-heading: #252525;
+  --content-contrast: #ad1f23;
+  --content-text: #666;
+  --content-text-light: #b0b0b0;
+  --font-text: 'Open Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, var(--sidebar-bg) 50%, #fff 50%);
+  font-family: var(--font-text);
+}
+
+section.bg-grey {
+  background: linear-gradient(
+    to right,
+    var(--sidebar-bg) 50%,
+    var(--content-bg-grey) 50%
+  );
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  font-size: 0.8rem;
+}
+
+.sidebar h2 {
+  color: var(--sidebar-heading);
+  border-top: 1px solid #fff;
+}
+
+.sidebar h3 {
+  color: var(--sidebar-subheading);
+  font-size: 1rem;
+}
+
+.sidebar a {
+  color: var(--sidebar-subheading);
+  text-decoration: none;
+  font-style: italic;
+}
+
+.content {
+  background-color: var(--content-bg);
+  color: var(--content-text);
+}
+
+.content h1,
+.content h2 {
+  color: var(--content-heading);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.content h1::after,
+.content h2::after {
+  content: ' ';
+  width: 4rem;
+  height: 0.5rem;
+  background-color: var(--content-heading);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.content h3 {
+  color: var(--content-contrast);
+  font-size: 1rem;
+}
+
+.content-grey {
+  background-color: var(--content-bg-grey);
+}
+
+header .photo {
+  width: 165px;
+  height: 165px;
+  border-radius: 200px;
+}
+
+header i {
+  background-color: var(--sidebar-bg);
+  color: var(--content-bg);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 2rem !important;
+  margin-right: 0.5rem;
+}
+
+section.about .stats > div > span {
+  background-color: #000;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 800;
+  display: inline-block;
+  width: 112px;
+  height: 112px;
+  border-radius: 100%;
+  line-height: 110px;
+  margin-bottom: 1rem;
+  transition: width 0.5s, height 0.5s;
+  position: relative;
+}
+
+section.about .stats > div:hover > span {
+  width: 120px;
+  height: 120px;
+  line-height: 118px;
+}
+
+section.about .stats > div > span::before {
+  content: ' ';
+  position: absolute;
+  width: 94%;
+  height: 94%;
+  border-radius: 100%;
+  border: 3px solid #fff;
+  left: 3%;
+  top: 3%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+section.about .stats > div:hover > span::before {
+  opacity: 1;
+}
+
+section.about .stats > div > h4,
+section.about .stats > div > p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  transition: color 0.5s;
+}
+
+section.about .stats > div:hover > h4,
+section.about .stats > div:hover > p {
+  color: #000;
+}
+
+section.interests i {
+  font-size: 3rem;
+  color: var(--content-contrast);
+}
+
+section.work .position {
+  color: var(--content-heading);
+}
+
+section.education .institute {
+  color: var(--content-text-light);
+  font-weight: 300;
+  font-style: italic;
+  text-transform: unset;
+}
+
+section.skills .progress-bar {
+  background-color: var(--content-heading);
+}
+
+section.skills h3 {
+  color: var(--content-heading);
+}
+
+section.skills button::before {
+  content: 'Show less skills';
+  padding-right: 0.5rem;
+  padding: 0;
+}
+
+section.skills button.collapsed::before {
+  content: 'Show more skills';
+}
+
+footer .content {
+  border-top: 2px solid var(--content-text-light);
+}
+
+footer .content h3 {
+  color: var(--sidebar-subheading);
+}
+
+footer .content p.light {
+  color: var(--content-text-light);
+}
+
+@media (max-width: 767px) {
+  body {
+    background: var(--content-bg);
+  }
+  section.bg-grey {
+    background: var(--content-bg);
+  }
+  .sidebar {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+  }
+  header .sidebar {
+    background-color: var(--sidebar-bg);
+  }
+  .sidebar h2 {
+    color: var(--content-heading);
+    border-top: 1px solid var(--content-heading);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  section.about .stats > div > span {
+    width: 80px;
+    height: 80px;
+    line-height: 78px;
+    font-size: 2.5rem;
+  }
+
+  section.about .stats > div:hover > span {
+    width: 84px;
+    height: 84px;
+    line-height: 82px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+}
+
+@media (min-width: 1400px) {
+}
